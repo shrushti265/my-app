@@ -1,5 +1,6 @@
 import "./App.css";
-import logo from "./logo.png";
+import { Navbar, Searchbar } from "./components/index";
+
 
 function App() {
   return (
