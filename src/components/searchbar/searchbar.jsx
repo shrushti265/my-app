@@ -6,10 +6,11 @@ const Searchbar = () => {
     <>
       <div className='searchbar'>
         <div className='searchbar_category'>
-            <span>Podcast</span>
+            <span>Talks</span>
             <span>Investment</span>
             <span>Finance</span>
             <span>Crypto</span>
+            <span>More</span>
         </div>
         <div className='Searchbar_input'>
             <input type='text'/>

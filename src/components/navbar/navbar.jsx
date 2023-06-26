@@ -1,31 +1,40 @@
-import React from 'react'
+import React from "react";
 // import { logo } from '../../assets'
-import "./navbar.css"
+import "./navbar.css";
 
 const Navbar = () => {
   return (
-    
-      <>
-        <div className='navbar'>
-            <div className='navbar_logo'>
-                <div className='navbar_media'>
-                    <img alt=""></img>
-                </div>
-                <span>VideoLib</span>
-            </div>
-            <div className='navbar_genre'>
-                <span className='navbar_text'>Likes</span>
-                <span className='navbar_text'>History</span>
-                <span className='navbar_text'>Playlist</span>
-                <span className='navbar_text'>Watch Later</span>
-            </div>
-            <div className='navbar_profile'>
-                <span className='navbar_text'>Login</span>
-            </div>
+    <>
+      <div className="navbar">
+        <div className="navbar_logo">
+          <div className="navbar_media">
+            {/* <img src="https://finema.vercel.app/static/media/landing-1.d39b782eeebf6132c02b.png" alt=""></img> */}
+          </div>
+          <span>VideoLib</span>
+          <div className="navbar_logoname">VideoLib</div>
         </div>
-      </>
-    
-  )
-}
+        <div className="navbar_genre">
+          <div className="navbar_badge">
+            <span className="navbar_text">Likes</span>
+            <span className="navbar_badge_number navbar_text"> 2 </span>
+          </div>
+          <span className="navbar_text">History</span>
+          <div className="navbar_badge">
+            <span className="navbar_text">Playlist</span>
+            <span className="navbar_badge_number navbar_text">2</span>
+          </div>
 
-export { Navbar }
+          <div className="navbar_badge">
+            <span className="navbar_text">Watch later</span>
+            <span className="navbar_badge_number navbar_text">2</span>
+          </div>
+        </div>
+        <div className="navbar_profile">
+          <span className="navbar_text">Login</span>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export { Navbar };

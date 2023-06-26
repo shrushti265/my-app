@@ -18,16 +18,16 @@
 
 
 }
-.searchbar__category{
+.searchbar_category{
     display: flex;
     gap: 3rem;
 
 }
-.searchbar__category >span{
+.searchbar_category > span{
     font-size:2.5rem;
     color: var(--white-color)
 }
-.searchbar__input > input{
+.searchbar_input > input{
     width: 50rem;
     height: 5rem;
 }
