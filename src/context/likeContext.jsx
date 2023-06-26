@@ -1,10 +1,15 @@
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useReducer } from 'react'
+import {likeReducer} from './../reducer/likeReducer'
 
 const LikeContext = createContext() 
 const LikeProvider = ({children}) => {
+const [likeState, likeDispatch] = useReducer(likeReducer, {
+    likedItems: []
+})
+
   return (
     <div>
-      <LikeContext.Provider value= {{value : 6}}>
+      <LikeContext.Provider value= {{likeState, likeDispatch}}>
         {children}
       </LikeContext.Provider>
     </div>

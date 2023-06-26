@@ -1,1 +1,1 @@
-export {useLike,LikeProvider} from "./likeContext"
+export {useLike, LikeProvider} from "./likeContext"

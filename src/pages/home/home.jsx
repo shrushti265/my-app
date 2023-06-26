@@ -1,11 +1,12 @@
 import React from 'react'
-import {VideoStore,AddedVideo} from "./../../components/index"
+import {Videostore,AddedVideo} from "./../../components/index"
 
 const Home = () => {
   return (
     <>
     <div className='home'>
-      <VideoStore />
+      <Videostore />
+      <AddedVideo />
     </div>
     </>
   )
