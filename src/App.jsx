@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar, Searchbar } from "./components/index";
-import { Home } from "./pages/index"
+import { Home, LikedPage} from "./pages/index"
+
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Searchbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/like" element = {<LikedPage />}></Route>
       </Routes>
     </div>
   );

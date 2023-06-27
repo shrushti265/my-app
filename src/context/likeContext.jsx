@@ -4,7 +4,7 @@ import {likeReducer} from './../reducer/likeReducer'
 const LikeContext = createContext() 
 const LikeProvider = ({children}) => {
 const [likeState, likeDispatch] = useReducer(likeReducer, {
-    likedItems: []
+    likeItems: []
 })
 
   return (

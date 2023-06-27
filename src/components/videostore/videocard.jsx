@@ -13,11 +13,11 @@ console.log(likeState)
       <div className="text-overlay-card-img-box">
         <img src={`https://i.ytimg.com/vi/${_id}/hq720.jpg`} />
       </div>
-      <div class="card-tag tag-overflow ">{charactor}</div>
+      <div className="card-tag tag-overflow ">{charactor}</div>
       <div className="card-desc skin">
         Visit ten places on our planet that are undergoing the biggest changes
         today
-        <div class="card-footer-box card__icons">
+        <div className="card-footer-box card__icons">
           <AiOutlineHeart color="#AB542F" size="3rem" onClick={() => likeDispatch({
             type:"ADD_To_LIKE",
             payload: {_id, title, description, charactor}
