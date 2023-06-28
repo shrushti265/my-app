@@ -4,7 +4,7 @@ const watchLaterReducer = ({watchLaterState, watchLaterAction}) => {
         return {
 
         }
-        case "WATCH_LATER":
+        case "ADD_TO_WATCH_LATER":
             return{
                 ...watchLaterState,
                 watchLaterItems : [watchLaterState.watchLaterItems, watchLaterAction.payload]

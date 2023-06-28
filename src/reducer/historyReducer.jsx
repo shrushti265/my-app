@@ -4,7 +4,7 @@ const historyReducer = (historyState,historyAction) => {
 
             break;
 
-            case "ADD_IN_HISTORY" :
+            case "ADD_TO_HISTORY" :
                 return {
                     ...historyState,
                     historyItems: [...historyState.historyItems, historyAction.payload]

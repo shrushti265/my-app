@@ -9,7 +9,17 @@ const VideoCard = ({ product, index }) => {
   const { _id, title, description, charactor } = product;
 const {likeState, likeDispatch} = useLike()
 const {watchLaterState, watchLaterDispatch} = useWatchLater()
-const {historyDispatch} = useHistory()
+const {historyState, historyDispatch} = useHistory()
+
+const isHistoryItem = checkInWatch(_id, historyState.historyItems)
+const historyHandler = (id, product) => {
+  if(!isHistoryItem) {
+    historyDispatch({
+      type: "ADD_TO_HISTORY",
+      payload: product
+    })
+  }
+}
 
 const isItem = checkInWatch(_id, watchLaterState.watchLaterItems)
 const addInWatchLaterHandler = (id, product) => {
@@ -21,7 +31,7 @@ const addInWatchLaterHandler = (id, product) => {
   }
   else {
     watchLaterDispatch({
-      type: "wATCH_LATER",
+      type: "ADD_TO_WATCH_LATER",
       payload: product
     })
   }
@@ -49,10 +59,7 @@ const likeHandler = (id, product) => {
   return (
     <div className="border-skin text-overlay-card-dimension card-relative video-card">
       <div className="text-overlay-card-img-box" 
-        onClick={() => historyDispatch({
-          type: 'ADD_TO_HISTORY',
-          payload: product
-        })}  
+        onClick={() => historyHandler(id, product)}  
       >
         <img src={`https://i.ytimg.com/vi/${_id}/hqdefault.jpg`} />
       </div>

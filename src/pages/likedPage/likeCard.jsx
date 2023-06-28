@@ -2,15 +2,43 @@ import React from 'react'
 import {AiOutlineHeart} from "react-icons/ai"
 import {MdOutlinePlaylistPlay} from "react-icons/md"
 import {MdOutlineWatchLater} from"react-icons/md"
-import {useLike} from "./../../context/index"
+import {useLike, useWatchLater, useHistory} from "./../../context/index"
+import {checkInWatch} from "../../utils/index"
 
 const LikeCard = ({product,index}) => {
     const{_id,title,description,charactor} = product
-    const{likeState, likeDispatch} = useLike()
+    const{likeDispatch} = useLike()
+    const {watchLaterState, watchLaterDispatch} = useWatchLater()
+    const{ historyState,historyDispatch} = useHistory();
 
+    const isHistoryItem = checkInArray(_id,historyState.historyItems)
+  const historyHandler = (id,product) => {
+    if(!isHistoryItem){
+      historyDispatch({ 
+              type:"ADD_TO_HISTORY",
+              payload : product
+            })
+
+  }}
+
+    const isItem = checkInWatch(_id, watchLaterState.watchLaterItems)
+    const watchLaterHandler = (id, product) => {
+      if(isItem){
+        watchLaterDispatch({
+          type: 'REMOVE_FROM_WATCH_LATER',
+          payload:id
+        })
+      }
+      else{
+        watchLaterDispatch({
+          type: 'ADD_TO_WATCH_LATER',
+          payload: product
+        })
+      }
+    }
     return (
     <div class="border-skin text-overlay-card-dimension card-relative video-card" key = {index}>
-    <div class="text-overlay-card-img-box">
+    <div class="text-overlay-card-img-box" onClick={() => historyHandler(_id,product)}>
       <img
       src={`https://i.ytimg.com/vi/${_id}/hq720.jpg`}
     />
@@ -26,7 +54,7 @@ const LikeCard = ({product,index}) => {
         payload: _id
         })}/>
       <MdOutlinePlaylistPlay color= "#ffff" size="4rem"/>
-      <MdOutlineWatchLater color= "#ffff" size="3rem"/>
+      <MdOutlineWatchLater color= "#ffff" size="3rem" onClick={() => watchLaterHandler(id, product)}/>
       </div>
       </div>
   )
