@@ -2,11 +2,12 @@ import React from "react";
 // import { logo } from '../../assets'
 import "./navbar.css";
 import {Link} from 'react-router-dom'
-import {useLike, useWatchLater} from './../../context/index'
+import {useLike, useWatchLater, useHistory} from './../../context/index'
 
 const Navbar = () => {
   const {likeState} = useLike()
   const {watchLaterState} = useWatchLater()
+  const {historyState} = useHistory()
   return (
     <>
       <div className="navbar">
@@ -25,6 +26,9 @@ const Navbar = () => {
               <span className="navbar_badge_number navbar_text">{likeState.likeItems.length}</span>
           </div>
           <span className="navbar_text">History</span>
+          <Link to = "./history">
+            <span className="navbar_text">History</span>
+          </Link>
           <div className="navbar_badge">
             <span className="navbar_text">Playlist</span>
             <span className="navbar_badge_number navbar_text">2</span>

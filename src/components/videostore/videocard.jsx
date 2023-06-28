@@ -2,17 +2,24 @@ import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import {MdOutlinePlaylistPlay} from "react-icons/md"
 import {MdOutlineWatchLater} from"react-icons/md"
-import {useLike, useWatchLater} from "./../../context/index"
+import {useLike, useWatchLater, useHistory} from "./../../context/index"
 
 const VideoCard = ({ product, index }) => {
   const { _id, title, description, charactor } = product;
 const {likeState, likeDispatch} = useLike()
 const {watchLaterDispatch} = useWatchLater()
+const {historyDispatch} = useHistory()
+
 console.log(likeState)
   return (
     <div className="border-skin text-overlay-card-dimension card-relative video-card">
-      <div className="text-overlay-card-img-box">
-        <img src={`https://i.ytimg.com/vi/${_id}/hq720.jpg`} />
+      <div className="text-overlay-card-img-box" 
+        onClick={() => historyDispatch({
+          type: 'ADD_TO_HISTORY',
+          payload: product
+        })}  
+      >
+        <img src={`https://i.ytimg.com/vi/${_id}/hqdefault.jpg`} />
       </div>
       <div className="card-tag tag-overflow ">{charactor}</div>
       <div className="card-desc skin">
@@ -22,10 +29,12 @@ console.log(likeState)
           <AiOutlineHeart color="#AB542F" size="3rem" 
             onClick={() => likeDispatch({
             type:"ADD_To_LIKE",
-            payload: {_id, title, description, charactor}
+            payload: product
           })}
           />
+
           <MdOutlinePlaylistPlay color="#ffff" size="4rem" />
+
           <MdOutlineWatchLater color="#ffff" size="3rem" 
           onClick={() => watchLaterDispatch({
             type: "WATCH_LATER",

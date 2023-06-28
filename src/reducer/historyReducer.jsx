@@ -4,8 +4,20 @@ const historyReducer = (historyState,historyAction) => {
 
             break;
 
+            case "ADD_IN_HISTORY" :
+                return {
+                    ...historyState,
+                    historyItems: [...historyState.historyItems, historyAction.payload]
+                }
+
+            case "DELETE_FROM_HISTORY":
+                return{
+                    ...historyState,
+                    historyItems: historyState.historyItems.filter(item => item._id !== historyAction.payload)
+                }
         default:
-            break;
+           
+            return historyState
     }
 }
 export {historyReducer}
