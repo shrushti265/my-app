@@ -3,14 +3,49 @@ import { AiOutlineHeart } from "react-icons/ai";
 import {MdOutlinePlaylistPlay} from "react-icons/md"
 import {MdOutlineWatchLater} from"react-icons/md"
 import {useLike, useWatchLater, useHistory} from "./../../context/index"
+import { checkInWatch } from "../../utils";
 
 const VideoCard = ({ product, index }) => {
   const { _id, title, description, charactor } = product;
 const {likeState, likeDispatch} = useLike()
-const {watchLaterDispatch} = useWatchLater()
+const {watchLaterState, watchLaterDispatch} = useWatchLater()
 const {historyDispatch} = useHistory()
 
-console.log(likeState)
+const isItem = checkInWatch(_id, watchLaterState.watchLaterItems)
+const addInWatchLaterHandler = (id, product) => {
+  if(isItem) {
+    watchLaterDispatch({
+      type: "REMOVE_FROM_WATCH_LATER",
+      payload: id
+    })
+  }
+  else {
+    watchLaterDispatch({
+      type: "wATCH_LATER",
+      payload: product
+    })
+  }
+}
+
+const findInLike = (id, product) => {
+  return product.find(item => item._id === id)
+}
+const isLike = findInLike(_id, likeState.likeItems)
+const likeHandler = (id, product) => {
+  if(isLike) {
+    likeDispatch({
+      type: "REMOVE_FROM_LIKE",
+      payload: id
+    })
+  }
+    else {
+      likeDispatch({
+        type: "ADD_TO_LIKE",
+        payload: product
+      })
+    }
+  }
+
   return (
     <div className="border-skin text-overlay-card-dimension card-relative video-card">
       <div className="text-overlay-card-img-box" 
@@ -27,24 +62,19 @@ console.log(likeState)
         today
         <div className="card-footer-box card__icons">
           <AiOutlineHeart color="#AB542F" size="3rem" 
-            onClick={() => likeDispatch({
-            type:"ADD_To_LIKE",
-            payload: product
-          })}
+            onClick={() => {likeHandler(_id, product)}}
           />
 
           <MdOutlinePlaylistPlay color="#ffff" size="4rem" />
 
           <MdOutlineWatchLater color="#ffff" size="3rem" 
-          onClick={() => watchLaterDispatch({
-            type: "WATCH_LATER",
-            payload: {_id, title, description, charactor}
-          })}
+          onClick={() => {addInWatchLaterHandler(_id, product)}}
+          
           />
         </div>
       </div>
     </div>
   );
-};
+}
 
 export {VideoCard}
