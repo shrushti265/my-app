@@ -11,7 +11,7 @@ const LikeCard = ({product,index}) => {
     const {watchLaterState, watchLaterDispatch} = useWatchLater()
     const{ historyState,historyDispatch} = useHistory();
 
-    const isHistoryItem = checkInArray(_id,historyState.historyItems)
+    const isHistoryItem = checkInWatch(_id,historyState.historyItems)
   const historyHandler = (id,product) => {
     if(!isHistoryItem){
       historyDispatch({ 
@@ -54,7 +54,7 @@ const LikeCard = ({product,index}) => {
         payload: _id
         })}/>
       <MdOutlinePlaylistPlay color= "#ffff" size="4rem"/>
-      <MdOutlineWatchLater color= "#ffff" size="3rem" onClick={() => watchLaterHandler(id, product)}/>
+      <MdOutlineWatchLater color= "#ffff" size="3rem" onClick={() => watchLaterHandler(_id, product)}/>
       </div>
       </div>
   )

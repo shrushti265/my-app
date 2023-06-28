@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import axios from "axios"
+import React from "react"
 import {VideoCard} from "./videocard"
+import { useStore } from "../../context/storeContext"
+
 
 const Videostore = () => {
-  const [getVideo, setGetVideo] = useState([])
-  useEffect (() => {
-    const fetchData = async () => {
-      const videoData = await axios.get("./api/videos")
-      console.log(videoData)
-      setGetVideo(videoData.data.videos)
-    }
-    fetchData();
-  }, [])
+  const {storeState} = useStore()
+  
   return (
     <>
       <div className='videostore col-9'>
         <p>Popular</p>
         <div className='vidostore_container'>
           {
-            getVideo.map((item, index) => <VideoCard product={item} index={index}/>)
+            storeState.storeItems.map((item, index) => {
+              <VideoCard product={item} index={index}/>
+            })
           }
         </div>
       </div>

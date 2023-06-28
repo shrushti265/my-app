@@ -59,7 +59,7 @@ const likeHandler = (id, product) => {
   return (
     <div className="border-skin text-overlay-card-dimension card-relative video-card">
       <div className="text-overlay-card-img-box" 
-        onClick={() => historyHandler(id, product)}  
+        onClick={() => historyHandler(_id, product)}  
       >
         <img src={`https://i.ytimg.com/vi/${_id}/hqdefault.jpg`} />
       </div>
@@ -72,7 +72,7 @@ const likeHandler = (id, product) => {
             onClick={() => {likeHandler(_id, product)}}
           />
 
-          <MdOutlinePlaylistPlay color="#ffff" size="4rem" />
+          <MdOutlinePlaylistPlay color="#AB542F" size="4rem" onClick={() => {}}/>
 
           <MdOutlineWatchLater color="#ffff" size="3rem" 
           onClick={() => {addInWatchLaterHandler(_id, product)}}

@@ -11,7 +11,7 @@ const WatchLaterCard = ({product,index}) => {
     const {likeState, likeDispatch} = useLike()
     const { historyState,historyDispatch } = useHistory()
 
-    const isHistoryItem = checkInArray(_id,historyState.historyItems)
+    const isHistoryItem = checkInWatch(_id,historyState.historyItems)
     const historyHandler = (id,product) => {
       if(!isHistoryItem){
         historyDispatch({ 

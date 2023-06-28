@@ -25,12 +25,14 @@ const Navbar = () => {
             </Link>
               <span className="navbar_badge_number navbar_text">{likeState.likeItems.length}</span>
           </div>
-          <span className="navbar_text">History</span>
+          
           <Link to = "./history">
             <span className="navbar_text">History</span>
           </Link>
           <div className="navbar_badge">
+            <Link to = "./playlist">
             <span className="navbar_text">Playlist</span>
+            </Link>
             <span className="navbar_badge_number navbar_text">2</span>
           </div>
 
