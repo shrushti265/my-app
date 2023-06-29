@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import { Navbar, Searchbar } from "./components/index";
-import { Home, LikedPage, WatchLaterPage, HistoryPage, Playlist} from "./pages/index"
+import { Home, LikedPage, WatchLaterPage, HistoryPage, Playlist, Login, Signup} from "./pages/index"
 
 
 function App() {
@@ -15,6 +15,8 @@ function App() {
         <Route path="/watchlater" element={<WatchLaterPage />} />
         <Route path="/history" element={<HistoryPage />}></Route>
         <Route path="/playlist" element={<Playlist />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
     </div>
   );

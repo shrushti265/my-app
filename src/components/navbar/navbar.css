@@ -27,6 +27,7 @@ height: 9vh;
     display: flex;
     gap: 1rem;
     align-items: center;
+    /* margin-left: 5rem; */
 }
 
 .navbar_logoname{
@@ -47,7 +48,7 @@ align-items: center;
  font-size: 2rem;
 }
 .navbar_profile{
-    margin: auto 0;
+    margin: auto 4rem;
 }
 .navbar_badge{
     /* border: 1px solid #ffff; */

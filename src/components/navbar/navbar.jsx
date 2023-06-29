@@ -15,7 +15,7 @@ const Navbar = () => {
           <div className="navbar_media">
             {/* <img src="https://finema.vercel.app/static/media/landing-1.d39b782eeebf6132c02b.png" alt=""></img> */}
           </div>
-          <span>VideoLib</span>
+          {/* <span>VideoLib</span> */}
           <div className="navbar_logoname">VideoLib</div>
         </div>
         <div className="navbar_genre">
@@ -33,7 +33,7 @@ const Navbar = () => {
             <Link to = "./playlist">
             <span className="navbar_text">Playlist</span>
             </Link>
-            <span className="navbar_badge_number navbar_text">2</span>
+            <span className="navbar_badge_number navbar_text">{}</span>
           </div>
 
           <div className="navbar_badge">
