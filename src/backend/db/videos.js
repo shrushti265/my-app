@@ -9,12 +9,14 @@ export const videos = [
     title: "talks",
     charactor: "sunadar pichai",
     description: "",
+    modal: false,
     link: "https://www.youtube.com/watch?v=-yLlMk41sro"
   },{
     id: "Lb4IcGF5iTQ",
     title: "talks",
     charactor: "Mark Zuckerberg",
     description: "",
+    modal: false,
     link: "https://www.youtube.com/watch?v=Lb4IcGF5iTQ"
   },
   {
@@ -31,7 +33,7 @@ export const videos = [
     link: "https://youtu.be/bXGhtjezJPY"
   },
   {
-    _id: "PJ2wjBt3Xeg",
+    _id: "_Hk7nl8LbQA",
     title: "talks",
     charactor: "Ratan Tata",
     description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",

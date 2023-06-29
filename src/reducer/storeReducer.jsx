@@ -3,8 +3,16 @@ const storeReducer = (storeState, storeAction) => {
         case "FETCH_DATA":
             return{
                 ...storeState,
-                storeItems: [...storeAction.payload]
+                storeItems: [...storeAction.payload, ...storeState.storeItems]
             }
+
+        case "SMALL_MODAL":
+            return{
+                ...storeState,
+                storeItems: storeState.storeItems.map((item) => item.id === storeAction.payload? {
+                    ...item, modal: !item.modal} :item )
+                }
+                
 
             default:
                 return storeState

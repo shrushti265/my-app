@@ -40,6 +40,7 @@ const addInWatchLaterHandler = (id, product) => {
 const findInLike = (id, product) => {
   return product.find(item => item._id === id)
 }
+
 const isLike = findInLike(_id, likeState.likeItems)
 const likeHandler = (id, product) => {
   if(isLike) {
