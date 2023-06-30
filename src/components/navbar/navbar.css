@@ -10,7 +10,7 @@
 display: flex;
 justify-content:space-between;
 height: 9vh;
-/* align-items: center; */
+align-items: center;
 }
 
 .navbar_media{
@@ -27,7 +27,7 @@ height: 9vh;
     display: flex;
     gap: 1rem;
     align-items: center;
-    /* margin-left: 5rem; */
+    margin-left: 5rem;
 }
 
 .navbar_logoname{
@@ -54,10 +54,21 @@ align-items: center;
     /* border: 1px solid #ffff; */
     padding :  1rem 1.5rem;
     position: relative;
+    width: fit-content;
+    align-items: center;
+    display: flex;
 }
 .navbar_badge_number{
     position: absolute;
-    top: 0;
-    right :0;
-    color: var(--primary-color)
+    top: -8px;
+    right : -5px;
+    /* width: 3rem;
+    height: 3rem; */
+    /* border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #ffff;
+    background-color: var(--primary-color) */
 }

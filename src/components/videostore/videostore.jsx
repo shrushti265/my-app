@@ -1,7 +1,7 @@
 import React from "react"
 import {VideoCard} from "./videocard"
-import { useStore } from "../../context/storeContext"
-
+import { useStore } from "../../context/index"
+import "./videostore.css"
 
 const Videostore = () => {
   const {storeState} = useStore()

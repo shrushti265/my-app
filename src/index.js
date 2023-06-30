@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { HistoryContextProvider, LikeProvider, StoreProvider } from "./context";
+import { FilterProvider, HistoryContextProvider, LikeProvider, StoreProvider } from "./context";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
@@ -13,6 +13,7 @@ makeServer();
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
+      <FilterProvider>
       <StoreProvider>
       <LikeProvider>
         <WatchLaterProvider>
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")).render(
         </WatchLaterProvider>
       </LikeProvider>
       </StoreProvider>
+      </FilterProvider>
     </Router>
   </React.StrictMode>
 );

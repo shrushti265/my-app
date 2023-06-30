@@ -7,7 +7,7 @@ const Searchbar = () => {
       <div className='searchbar'>
         <div className='searchbar_category'>
             <span>Talks</span>
-            <span>Investment</span>
+            <span>stock</span>
             <span>Finance</span>
             <span>Crypto</span>
             <span>More</span>

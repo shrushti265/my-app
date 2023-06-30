@@ -1,0 +1,14 @@
+.video-card{
+    border: none;
+    }
+
+.videostore_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100vw;
+}
+
+.card-desc{
+    color: #ffff
+}

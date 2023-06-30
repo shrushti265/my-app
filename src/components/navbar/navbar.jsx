@@ -11,6 +11,8 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
+        <Link to = "./">
+          {' '}
         <div className="navbar_logo">
           <div className="navbar_media">
             {/* <img src="https://finema.vercel.app/static/media/landing-1.d39b782eeebf6132c02b.png" alt=""></img> */}
@@ -18,6 +20,7 @@ const Navbar = () => {
           {/* <span>VideoLib</span> */}
           <div className="navbar_logoname">VideoLib</div>
         </div>
+        </Link>
         <div className="navbar_genre">
           <div className="navbar_badge">
             <Link to = "./like ">
@@ -44,7 +47,10 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar_profile">
-          <Link to = "./login" ><span className="navbar_text"> Login </span></Link>
+          <Link to = "./login" > 
+          {""} 
+          <span className="navbar_text"> Login </span>
+          </Link>
         </div>
       </div>
     </>
