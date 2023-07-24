@@ -1,12 +1,13 @@
 import React from 'react'
-import {Videostore,AddedVideo} from "./../../components/index"
+import {Videostore} from "./../../components/index"
+import { usePlaylist } from '../../context/index'
 
 const Home = () => {
+  const {openPlaylistModal} = usePlaylist()
   return (
     <>
     <div className='home'>
-      <Videostore />
-      <AddedVideo />
+      <Videostore />   
     </div>
     </>
   )

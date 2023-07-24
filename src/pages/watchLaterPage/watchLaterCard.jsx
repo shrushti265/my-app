@@ -3,7 +3,7 @@ import {AiOutlineHeart} from "react-icons/ai"
 import {MdOutlinePlaylistPlay} from "react-icons/md"
 import {MdOutlineWatchLater} from"react-icons/md"
 import {useLike, useWatchLater, useHistory} from "./../../context/index"
-import { checkInWatch } from '../../utils/index'
+import { checkInArray } from '../../utils/index'
 
 const WatchLaterCard = ({product,index}) => {
     const{_id,title,description,charactor} = product
@@ -11,7 +11,7 @@ const WatchLaterCard = ({product,index}) => {
     const {likeState, likeDispatch} = useLike()
     const { historyState,historyDispatch } = useHistory()
 
-    const isHistoryItem = checkInWatch(_id,historyState.historyItems)
+    const isHistoryItem = checkInArray(_id,historyState.historyItems)
     const historyHandler = (id,product) => {
       if(!isHistoryItem){
         historyDispatch({ 
@@ -20,7 +20,7 @@ const WatchLaterCard = ({product,index}) => {
               })
     }}
 
-    const isItem = checkInWatch(_id, likeState.likeItems)
+    const isItem = checkInArray(_id, likeState.likeItems)
     const likeHandler = (id, product) => {
       if(isItem) {
         likeDispatch({

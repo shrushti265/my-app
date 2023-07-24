@@ -12,3 +12,7 @@
 .card-desc{
     color: #ffff
 }
+
+.card__modal > span {
+    font-size: 2rem;
+  }

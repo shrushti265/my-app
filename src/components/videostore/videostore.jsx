@@ -1,23 +1,26 @@
-import React from "react"
+import React, { useState } from "react"
 import {VideoCard} from "./videocard"
-import { useStore } from "../../context/index"
+import { useStore, useFilter } from "../../context/index"
+import { filterByCategory } from "../../utils"
 import "./videostore.css"
 
 const Videostore = () => {
   const {storeState} = useStore()
-  
+  const {filterState} = useFilter()
+
+  const finalItems = filterByCategory(
+    storeState.storeItems,
+    filterState.filterBy
+  )
   return (
     <>
-      <div className='videostore col-9'>
-        <p>Popular</p>
-        <div className='vidostore_container'>
-          {
-            storeState.storeItems.map((item, index) => {
-              <VideoCard product={item} index={index}/>
-            })
-          }
-        </div>
-      </div>
+      <p> Showing Result <span className="total_product_text">{finalItems.length}</span> </p>
+      <div className="flex-wrap flex-center">
+        {finalItems.map((product) => (
+          <VideoCard product={product}/>
+        ))}
+        </div> 
+      
     </>
   )
 }

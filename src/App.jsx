@@ -1,20 +1,62 @@
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import { Navbar, Searchbar } from "./components/index";
-import { Home, LikedPage, WatchLaterPage, HistoryPage, Playlist, Login, Signup} from "./pages/index"
-
+import { Navbar, PlainNav, RequireAuth, Searchbar } from "./components/index";
+import { Home, LikedPage, WatchLaterPage, HistoryPage, Playlist, Login, Signup, LandingPage} from "./pages/index"
+import { VideosInPlaylist } from "./pages/playlistPage/videosInPlaylist";
+import { ToastContainer } from "react-toastify";
+import { useEffect } from "react";
 
 function App() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    document.title = "Finema";
+  }, []);
+    
   return (
     <div className="App">
-      <Navbar />
+      {pathname === "/login" || pathname === "/signup" ? (
+        <PlainNav />
+      ):(
+        <Navbar />
+      )}
       <Searchbar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/like" element = {<LikedPage />}></Route>
-        <Route path="/watchlater" element={<WatchLaterPage />} />
-        <Route path="/history" element={<HistoryPage />}></Route>
-        <Route path="/playlist" element={<Playlist />}></Route>
+        <Route path="/videos" element={<Home />}></Route>
+        <Route path="/" element={<LandingPage />}></Route>
+        {/* <Route path="/video/:videoId" element={<SingleVideo />} /> */}
+
+        <Route 
+        path="/like" 
+        element = {
+          <RequireAuth>
+            <LikedPage />
+          </RequireAuth>
+        } 
+        />
+        <Route 
+        path="/watchlater" 
+        element={
+          <RequireAuth>
+            <WatchLaterPage />
+          </RequireAuth>
+        } 
+        />
+        <Route 
+        path="/history" 
+        element={
+          <RequireAuth>
+            <HistoryPage />
+          </RequireAuth>
+        } 
+        />
+        <Route 
+        path="/playlist" 
+        element={
+        <RequireAuth>
+          <Playlist />
+        </RequireAuth>
+        }
+        />
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
       </Routes>
