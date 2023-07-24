@@ -3,6 +3,7 @@ import "./signup.css"
 import { Link,  useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-toastify'
+import "./signup.css"
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("Shrushti")
@@ -24,15 +25,15 @@ const Signup = () => {
         setTimeout(() => {
           Navigate("/login")
         }, 1000);
-        toast.success("signUp successFul")
+        toast.success("Signup Successful")
       }catch (error) {
-          toast.error("signup failed")
+          console.error("Signup Failed")
       }
   }
 
   return (
     <div className="signup_page">
-    <form action="" className="signup_form">
+    <div className="signup_form">
         <div className="signup_form_text">Signup</div>
         <input 
         type="text" 
@@ -58,12 +59,6 @@ const Signup = () => {
         name=""
         onChange={(e) => setPassword(e.target.value)}  
         />
-        {/* <input 
-        type="password" 
-        placeholder="confirm password" 
-        name=""
-        onChange={(e) => (e.target.value)}  
-        /> */}
         <button 
         type="submit" 
         value= "Signup" 
@@ -78,7 +73,7 @@ const Signup = () => {
           <span className="signup_text">Login</span>
         </Link> 
         </div>
-        </form>
+        </div>
 
 </div>
   )

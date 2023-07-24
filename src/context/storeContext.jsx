@@ -5,7 +5,8 @@ import { storeReducer } from "../reducer/storeReducer";
 const StoreContext = createContext();
 const StoreProvider = ({children}) => {
 const [storeState, storeDispatch] = useReducer(storeReducer, {
-    storeItems: [] 
+    storeItems: [],
+    modal: false
 })
 
     useEffect(() => {
@@ -25,4 +26,4 @@ const [storeState, storeDispatch] = useReducer(storeReducer, {
 }
 const useStore = () => useContext(StoreContext);
 
-export {useStore,StoreProvider};
+export {useStore, StoreProvider};

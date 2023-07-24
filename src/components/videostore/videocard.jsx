@@ -31,7 +31,7 @@ const historyHandler = (id, product) => {
 }
 
 const isWatchItem = checkInArray(_id, watchLaterState.watchLaterItems)
-const addInWatchLaterHandler = (id, product) => {
+const watchLaterHandler = (id, product) => {
   if(auth.token) {
 
   if(isWatchItem) {
@@ -49,10 +49,6 @@ const addInWatchLaterHandler = (id, product) => {
 }else{
   toast.error("plase Login First");
 }}
-
-const findInLike = (id, product) => {
-  return product.find(item => item._id === id)
-}
 
 const isLikeItem = checkInArray(_id, likeState.likeItems)
 const likeHandler = (id, product) => {
@@ -124,12 +120,12 @@ const likeHandler = (id, product) => {
         <MdWatchLater 
           color="#ffff" 
           size="3rem" 
-          onClick={() => {addInWatchLaterHandler(_id, product)}}
+          onClick={() => {watchLaterHandler(_id, product)}}
           /> :
         <MdOutlineWatchLater 
           color="#ffff" 
           size="3rem" 
-          onClick={() => {addInWatchLaterHandler(_id, product)}}
+          onClick={() => {watchLaterHandler(_id, product)}}
           />
         }
         </div>

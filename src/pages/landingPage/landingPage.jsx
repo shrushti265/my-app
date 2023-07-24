@@ -20,7 +20,7 @@ const LandingPage = () => {
             </Link>
         </div>  
         <div className='banner-images col-6'>
-            <img  alt="" />
+            <img  src="https://finema.vercel.app/static/media/landing-1.d39b782eeebf6132c02b.png" alt="" />
         </div>
     </div>
   )

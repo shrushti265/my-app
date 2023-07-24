@@ -2,7 +2,7 @@ import React from 'react'
 import {AiOutlineHeart} from "react-icons/ai"
 import {MdOutlinePlaylistPlay} from "react-icons/md"
 import {MdOutlineWatchLater} from"react-icons/md"
-import {useLike, useWatchLater, useHistory} from "./../../context/index"
+import {useLike, useWatchLater, useHistory,usePlaylist} from "./../../context/index"
 import { checkInArray } from '../../utils/index'
 
 const WatchLaterCard = ({product,index}) => {
@@ -10,6 +10,7 @@ const WatchLaterCard = ({product,index}) => {
     const{watchLaterDispatch} = useWatchLater()
     const {likeState, likeDispatch} = useLike()
     const { historyState,historyDispatch } = useHistory()
+    const {openPlaylistModal, setOpenPlaylistModal} = usePlaylist()
 
     const isHistoryItem = checkInArray(_id,historyState.historyItems)
     const historyHandler = (id,product) => {
@@ -53,7 +54,7 @@ const WatchLaterCard = ({product,index}) => {
       <MdOutlinePlaylistPlay color= "#ffff" size="4rem"/>
       <MdOutlineWatchLater color= "#ffff" size="3rem" onClick = {() => watchLaterDispatch({
         type:"REMOVE_FROM_WATCH_LATER",
-        payload: index
+        payload: _id
         })}/>
       </div>
       </div>

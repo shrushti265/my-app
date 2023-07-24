@@ -5,10 +5,10 @@ const playlistContext = createContext();
 const PlaylistProvider = ({children}) => {
 
     const [playlists, setPlaylists] = useState([])
-    const [playlistName, setPlaylistName] = useState([])
+    // const [playlistName, setPlaylistName] = useState([])
 
     return (
-        <playlistContext.Provider value={{ playlists, setPlaylists, playlistName, setPlaylistName }}>
+        <playlistContext.Provider value={{ playlists, setPlaylists }}>
             {children}
         </playlistContext.Provider>
     );

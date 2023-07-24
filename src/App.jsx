@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import { Navbar, PlainNav, RequireAuth, Searchbar } from "./components/index";
-import { Home, LikedPage, WatchLaterPage, HistoryPage, Playlist, Login, Signup, LandingPage} from "./pages/index"
+import { Home, LikedPage, WatchLaterPage, HistoryPage, Playlist, Login, Signup, LandingPage, SingleVideo} from "./pages/index"
 import { VideosInPlaylist } from "./pages/playlistPage/videosInPlaylist";
 import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
@@ -9,7 +9,7 @@ import { useEffect } from "react";
 function App() {
   const { pathname } = useLocation();
   useEffect(() => {
-    document.title = "Finema";
+    document.title = "video-lib";
   }, []);
     
   return (
@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/videos" element={<Home />}></Route>
         <Route path="/" element={<LandingPage />}></Route>
-        {/* <Route path="/video/:videoId" element={<SingleVideo />} /> */}
+        <Route path="/video/:videoId" element={<SingleVideo />} />
 
         <Route 
         path="/like" 
@@ -59,7 +59,19 @@ function App() {
         />
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/playlist/:id" element={<VideosInPlaylist/>}></Route>
       </Routes>
+      <ToastContainer
+      position="top-center"
+      autoClose={2000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      />
     </div>
   );
 }

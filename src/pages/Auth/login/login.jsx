@@ -2,35 +2,32 @@ import React, { useState } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useAuth } from "../../../context/AuthContext";
+import { useAuth } from "../../../context/index";
 import {toast} from 'react-toastify'
 
 const Login = () => {
   const [email, setMail] = useState("")
   const [password, setPassword] = useState("")
-  const [auth, setAuth] = useAuth();
-  
-  console.log(auth)
+  const {auth, setAuth} = useAuth()
+
   const navigate = useNavigate()
 
   const loginHandler = async () => {
     const body = {
       email: email,
-      password: password
+      password: password,
     }
       try {
         const response = await axios.post("/api/auth/login", body)
-        if (response.data.encodedToken) {
-          navigate("/");
+        if(response.data.encodedToken){
+          navigate("/")
           setAuth(() => ({
             token: response.data.encodedToken,
             isAuth: true,
-            userName: response.data.foundUser.firstName,
+            userName: response.data.foundUser.firstName
           }))
-        toast.success("Login Succesfull");
-      }else {
-        toast.error("Invalid UserID Passeord");
-      }
+          toast.error("Invalid userId Password")
+        }
     }catch (error) {
         toast.error("Login Failed");
       }
