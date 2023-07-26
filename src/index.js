@@ -7,12 +7,12 @@ import {
   StoreProvider,
   PlaylistProvider,
   AuthProvider,
-} from "./context";
+} from "./context/index";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
-import { WatchLaterProvider } from "./context";
+import { WatchLaterProvider } from "./context/index";
 // import landing1 from "./images/landing-1.png"
 // export{logo,landing1}
 

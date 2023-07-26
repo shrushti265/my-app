@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./signup.css"
 import { Link,  useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import axios from "axios"
 import {toast} from 'react-toastify'
 
 
@@ -56,7 +56,7 @@ const Signup = () => {
         <input 
         type="password" 
         placeholder="password" 
-        name="password"
+        name=""
         onChange={(e) => setPassword(e.target.value)}  
         />
         <button

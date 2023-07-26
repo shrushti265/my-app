@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import "./playlist.css"
 import { useAuth, usePlaylist } from '../../context/index'
-import axios from "axios"
+import axios from "axios";
 import { PlaylistCard } from './playlistCard'
 
 const Playlist = () => {

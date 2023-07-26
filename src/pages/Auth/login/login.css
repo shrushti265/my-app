@@ -1,8 +1,8 @@
 .login_form{
-    width: 50rem;
+    width: 30rem;
     border: 1px solid var(--primary-color);
     position: absolute;
-    top: 55%;
+    top: 70%;
     left: 50%;
     padding: 4rem;
     text-align: center;
