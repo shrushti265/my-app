@@ -8,7 +8,7 @@ import {toast} from 'react-toastify'
 const Login = () => {
   const [email, setMail] = useState("")
   const [password, setPassword] = useState("")
-  const {auth, setAuth} = useAuth()
+  const {setAuth} = useAuth()
 
   const navigate = useNavigate()
 
@@ -62,7 +62,7 @@ const Login = () => {
 
           <div className="signup_link">
             <div className="small-text">Not a member?</div>
-            <Link to="./signup">
+            <Link to="/signup">
               <span className="signup_text">Signup</span>
             </Link>
           </div>

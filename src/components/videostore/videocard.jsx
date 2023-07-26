@@ -88,7 +88,7 @@ const likeHandler = (id, product) => {
         Visit ten places on our planet that are undergoing the biggest changes
         today
 
-        <div className="card-footer-box card__icons">         
+        <div className="card-footer-box card_icons">         
           { isLikeItem ? 
           (
           <AiFillHeart 

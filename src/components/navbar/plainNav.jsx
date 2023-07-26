@@ -6,11 +6,11 @@ const PlainNav = () => {
   return (
     <div className="navbar">
       <Link to="/">
-        <div className="navbar__logo">
-          <div className="navbar__media">
+        <div className="navbar_logo">
+          <div className="navbar_media">
             {/* <img src={logo} alt="" /> */}
           </div>
-          <span className="navbar__logoname">Finema</span>
+          <span className="navbar_logoname">Finema</span>
         </div>
       </Link>
     </div>

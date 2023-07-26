@@ -52,12 +52,12 @@ const Modal = ({ setShowModal, video }) => {
         <p className="playlist_head">Add this Video to a collection</p>
         <div className="hr"></div>
 
-        <div action="" className="playlist__form">
-          <div className="align__horizontal">
+        <div action="" className="playlist_form">
+          <div className="align_horizontal">
             <input
               type="text"
               id="playlist_name"
-              className= "create__playlist__input"
+              className= "create_playlist_input"
               onChange={(e) => setTitle(e.target.value)}
             />
             <button
@@ -68,9 +68,9 @@ const Modal = ({ setShowModal, video }) => {
             </button>
           </div>
             
-            <div className="playlist__name__outer">
+            <div className="playlist_name_outer">
                         {playlists.length >= 0 &&
-            playlists.map((playlist) => (<div className="playlist__name__box">
+            playlists.map((playlist) => (<div className="playlist_name_box">
                 <input
                   type="checkbox"
                   onChange={() => addVideoToPlaylist(video, playlist._id)}
@@ -80,7 +80,7 @@ const Modal = ({ setShowModal, video }) => {
               </label>
               </div>))}</div>
 
-              <div className="align__horizontal">
+              <div className="align_horizontal">
             <button className="button primary_btn" type="submit" onClick = {() => setShowModal(false)}>
               Create Collection
             </button>

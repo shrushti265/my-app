@@ -23,7 +23,7 @@ const HistoryCard = ({product,index}) => {
     <div class="card-desc skin">
       Visit ten places on our planet that are undergoing the biggest
       changes today</div>
-    <div class="card-footer-box card__icons">
+    <div class="card-footer-box card_icons">
       <AiOutlineHeart  color="#AB542F" size="4rem"/>
       <MdOutlinePlaylistPlay color="#AB542F" size="4rem"/>
       <MdOutlineWatchLater color="#AB542F" size="3rem"/>

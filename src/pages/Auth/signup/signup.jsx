@@ -3,14 +3,14 @@ import "./signup.css"
 import { Link,  useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-toastify'
-import "./signup.css"
+
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("Shrushti")
   const [lastName, setLastName] = useState("yadav")
   const [email, setMail] = useState("shruy26@gmail.com")
   const [password, setPassword] = useState("1234")
-  const Navigate = useNavigate()
+  const navigate = useNavigate()
 
   const signupHandler = async () => {
       const body = {
@@ -23,11 +23,11 @@ const Signup = () => {
         const response = await axios.post("/api/auth/signup", body )
         localStorage.setItem("token", response.data.encodedToken)
         setTimeout(() => {
-          Navigate("/login")
+          navigate("/login")
         }, 1000);
         toast.success("Signup Successful")
       }catch (error) {
-          console.error("Signup Failed")
+          toast.error("Signup Failed")
       }
   }
 
@@ -55,13 +55,11 @@ const Signup = () => {
         />
         <input 
         type="password" 
-        placeholder="create password" 
-        name=""
+        placeholder="password" 
+        name="password"
         onChange={(e) => setPassword(e.target.value)}  
         />
-        <button 
-        type="submit" 
-        value= "Signup" 
+        <button
         className="button primary_btn"
         onClick={() => signupHandler()}
         >

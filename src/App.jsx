@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/videos" element={<Home />}></Route>
         <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/video/:videoId" element={<SingleVideo />} />
+        {/* <Route path="/video/:videoId" element={<SingleVideo />} /> */}
 
         <Route 
         path="/like" 
