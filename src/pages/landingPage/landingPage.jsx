@@ -26,4 +26,4 @@ const LandingPage = () => {
   )
 }
 
-export  {LandingPage}
+export  {LandingPage};

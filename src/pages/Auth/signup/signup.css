@@ -1,42 +1,41 @@
 .signup_form{
-    width: 50rem;
+    width: 25rem;
+    height: 30rem;
     border: 1px solid var(--primary-color);
     position: absolute;
-    top: 65%;
+    top: 60%;
     left: 50%; 
     padding: 4rem;
     text-align: center;
     transform: translate(-50%,-50%);
     box-shadow: 0 1rem 1rem rgba(0,0,0,0.12), 0 1rem 1rem rgba(0,0,0,0.24);
-    margin-top: 3rem;
+    margin-top: 3.9rem;
 }
 .signup_form_text{
-    font-size:3rem;
+    font-size:2rem;
     font-weight:500;
-    text-align: left;
-    margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: -3rem;
 }
 .signup_form input[type = "text"], .signup_form input[type = "password"]{
     border: none;
     background: none;
     display: block;
-    margin: 3rem auto;
+    margin: 2rem auto;
     color: var(--white-color);
 
     text-align: center;
     border: 2px solid var(--primary-color);
-    width: 35rem;
+    width: 25rem;
+    height: 0px;
     padding: 1.5rem 1rem;
     outline: none;
     transition: 0.25s;
     }
 
-    .signup_form input[type = "text"]:focus, .signup_form input[type = "password"]:focus{
-        width: 40rem;
-    
-    }
     .signup_form .button{
-        width: 19rem;
+        width: 12rem;
     
     }
     .signup_form .button:hover{
@@ -46,7 +45,7 @@
     }
     .signup_link{
         display: block;
-        margin-top:3.5rem;
+        margin-top:1.7rem;
     }
     .small_text{
         font-size:2rem;
@@ -54,5 +53,5 @@
     }
     .signup_text{
         color: var(--primary-color);
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
